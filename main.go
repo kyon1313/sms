@@ -82,7 +82,8 @@ func main() {
 	app := fiber.New()
 	database.Migration()
 	Routes(app)
-	log.Fatal(app.Listen(":3000"))
+
+	log.Fatal(app.Listen(":" + os.Getenv("PORT")))
 
 }
 
