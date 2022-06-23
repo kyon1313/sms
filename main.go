@@ -88,7 +88,6 @@ func main() {
 }
 
 type Messaging struct {
-	ID         uint       `json:"id"`
 	User       model.User `json:"user"`
 	TheMessage string     `json:"the_message"`
 }
@@ -96,7 +95,7 @@ type Messaging struct {
 func MessageSerializer(user model.User, message model.Message) Messaging {
 
 	return Messaging{
-		ID:         message.ID,
+
 		User:       user,
 		TheMessage: message.TheMessage,
 	}

@@ -37,6 +37,7 @@ func AddTransaction(c *fiber.Ctx) error {
 		})
 	}
 	database.DB.Find(&cars, "id=?", transac.CarID)
+
 	if cars.ID == 0 {
 		return c.JSON(&fiber.Map{
 			"message": "cars not exist",
